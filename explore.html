@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="explore.css">
+<script src="explore.js" defer></script>
+<!--<script src="https://kit.fontawesome.com/d6f697fed0.js" crossorigin="anonymous"></script>-->
+</head>
+
+<body>
+
+
+	<nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class = "logo"> Rate MyPath</label>
+        <ul>
+            <li><a class="homepg" href="rateMyPath.html">Home</a></li>
+            <li><a class="explorepg" href="explore.html">Explore</a></li>
+            <li><a class="favpg" href="favorites.html">Favorites</a></li>
+            <li><a class="aboutpg" href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+	<main>
+		<br>
+		<h3>Search all routes here!</h3>
+		<br>
+
+		<label for="firstval">Starting point:</label>
+		<input type="text" id = "firstval" placeholder="Enter text" onblur="getFirstVal()">
+		<p> </p>
+		<label for="secondval">Ending point:</label>
+		<input type="text" id = "secondval" placeholder="Enter text" onblur="getSecondVal()">	
+		<p> </p>	
+
+		<button onclick="updateButton()" id = "button">Submit</button>
+		
+		<p> </p>
+		<div id="error1" style="display: none;">
+			Please enter a starting point.
+		</div>
+		<div id="error2" style="display: none;">
+			Please enter an ending point.
+		</div>
+		<div id="error4" style="display: none;">
+			Please enter a starting and ending point.
+		</div>
+		<div id="error3" style="display: none;">
+			At least one of the fields above is invalid. Please try again.
+		</div>
+		<div id="found" style="display: none;">
+			Search found! 
+		</div>
+		  
+	</main>
+
+	<br>
+	<br>
+
+<!--	<div id="firstReview">
+	<h4>John Doe</h4>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<span class="fa fa-star checked"></span>
+	<span class="fa fa-star checked"></span>
+	<span class="fa fa-star checked"></span>
+	<span class="fa fa-star"></span>
+	<span class="fa fa-star"></span>
+	</div> -->
+	
+
+	<h2 id="result" style = "display: none">Available Paths:</h2>
+	<img id="stampmckeldin" src="StampMcKeldin.png" style = "display: none;">
+	<img id="princefredericksouthcampus" src="PrinceFredrickSouthCampus.png" style = "display: none;">
+	<img id="esjplantscience" src="ESJToPlantScience.png" style = "display: none;">
+	<button onclick="addToFavorites()" id = "button" style = "display: none;" >Add to favorites</button>
+	<script>
+		function getData() {
+		  var feedbackData = document.getElementById("feedback").value;
+		  console.log("Feedback/Comments:", feedbackData);
+		}
+	</script>
+
+	<form onsubmit="event.preventDefault(); submitForm();">		
+		<label for="Feedback/Comments">Feedback/Comments:</label>
+		<br>
+		<br>
+		<textarea id="feedback" name="message" rows="4" required> Enter comment here </textarea>
+		<br>
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>
