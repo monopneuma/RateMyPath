@@ -12,6 +12,12 @@ body{
 main{
     margin-left: 10px;
 }
+h3 {
+    
+    margin-left:6em;
+    margin-right:6em;
+    
+}
 
 nav{
     background: #0082e6;
@@ -52,6 +58,11 @@ nav a:hover{
     background-color: hsl(0,0%, 10%);
 }
 */
+
+p {
+    margin-left:6em;
+    margin-right:6em;
+}
 
 nav ul li a{
     color: white;
