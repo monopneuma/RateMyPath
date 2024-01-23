@@ -9,10 +9,22 @@ body{
     font-family: 'Times New Roman', Times, serif;
 
 }
+
+#label {
+    font-size: 17px;
+}
+
 main{
     margin-left: 10px;
 }
-
+#nameStyle {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+#submit {
+    text-align:center;
+    margin-bottom: 6em;
+}
 #result {
     text-align:center;
     font-size: 35px;
@@ -69,7 +81,7 @@ nav ul li a{
 }
 
 
-a.homepg , a:hover{
+a.explorepg , a:hover{
     background: #1b9bff;
     transition: .5s;
 }
@@ -150,6 +162,7 @@ section{
     margin-right:auto;
     margin-bottom: 2em;
 }
+
 #esjplantscience {
     display: center;
     max-height: 60%;
