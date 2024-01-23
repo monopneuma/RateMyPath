@@ -1,3 +1,7 @@
+
+
+
+
 var data = [['STAMP', 'MCKELDIN LIBRARY'], 
 	['EDWARD ST. JOHN', 'PLANT SCIENCES BUILDING'],
 	['PRINCE FREDERICK HALL','SOUTH CAMPUS DINING HALL'],
@@ -55,14 +59,20 @@ function updateButton() {
 		if (index == 0) {
 			displayHeader();
 			displayImage1();
+			displayName();
+			displayComments();
 		}
 		if (index == 1) {
 			displayHeader();
 			displayImage2();
+			displayName();
+			displayComments();
 		}
-		else {
+		else if (index == 2) {
 			displayHeader();
 			displayImage3();
+			displayName();
+			displayComments();
 		}
 	}
 	else if (getSecondVal() && getFirstVal()) {
@@ -89,7 +99,6 @@ function refreshImages() {
 	var img1 = document.getElementById("stampmckeldin");
 	var img2 = document.getElementById("esjplantscience");
 	var img3 = document.getElementById("princefredericksouthcampus");
-
 	img1.style.display = 'none';
 	img2.style.display = 'none';
 	img3.style.display = 'none';
@@ -136,14 +145,15 @@ function displayImage3() {
     img.style.display = 'initial';
 }
 
+
 function submitForm() {
 	var name = document.getElementById('feedback').value;
 
 	var formData = {
 	  name: name,
 	};
-
-	fetch('http://localhost:3000/submit-form', {
+}
+	/*fetch('http://localhost:3000/submit-form', {
 	  method: 'POST',
 	  headers: {
 		'Content-Type': 'application/json'
@@ -158,6 +168,48 @@ function submitForm() {
 	.catch(error => {
 	  console.error('Error:', error);
 	  // Handle errors or provide feedback to the user
+	}); 
+  } */
+ 
+/*import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+  // ...
+  // The value of `databaseURL` depends on the location of the database
+  databaseURL: "https://DATABASE_NAME.firebaseio.com",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+const analytics = getAnalytics(app);
+
+import { getDatabase, ref, set } from "firebase/database";
+function writeUserData(userId, name, email, imageUrl) {
+	const db = getDatabase();
+	set(ref(db, 'users/' + userId), {
+	  username: name,
+	  email: email,
+	  profile_picture : imageUrl
 	});
   }
- 
+
+import { getDatabase, ref, onValue } from "firebase/database";
+
+const db = getDatabase();
+const starCountRef = ref(db, 'posts/' + postId + '/starCount');
+onValue(starCountRef, (snapshot) => {
+  const data = snapshot.val();
+  updateStarCount(postElement, data);
+}); */
+
